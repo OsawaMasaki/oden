@@ -31,9 +31,9 @@ void Player::Update()
 	}
 
 	//弾の発射
-	if (Input::IsKey(DIK_SPACE))
+	if (Input::IsKeyDown(DIK_SPACE))
 	{
-	//	Instantiate<Bullet>(this);
+		Instantiate<Bullet>(this);
 	}
 }
 
