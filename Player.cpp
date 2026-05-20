@@ -1,6 +1,7 @@
 #include "Player.h"
 #include "Engine/Model.h"
 #include "Engine/Input.h"
+#include "Bullet.h"
 
 Player::Player(GameObject* parent)
 	:GameObject(parent, "Player"), hModel_(-1)
@@ -30,12 +31,10 @@ void Player::Update()
 	}
 
 	//弾の発射
-	/*
 	if (Input::IsKey(DIK_SPACE))
 	{
-		Instantiate<Bullet>(this);
+	//	Instantiate<Bullet>(this);
 	}
-	*/
 }
 
 void Player::Draw()

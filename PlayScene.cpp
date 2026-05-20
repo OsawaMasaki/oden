@@ -1,6 +1,7 @@
 ﻿#include "PlayScene.h"
 #include "Engine/Model.h"
 #include "Player.h"
+#include "Bullet.h"
 
 namespace
 {
@@ -18,6 +19,8 @@ void PlayScene::Initialize()
 	hModel_ = Model::Load("Oden.fbx");
 	assert(hModel_ >= 0);
 	Instantiate<Player>(this);
+	Instantiate<Bullet>(this);
+
 }
 
 void PlayScene::Update()
