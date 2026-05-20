@@ -19,7 +19,7 @@ void PlayScene::Initialize()
 	hModel_ = Model::Load("Oden.fbx");
 	assert(hModel_ >= 0);
 	Instantiate<Player>(this);
-	Instantiate<Bullet>(this);
+	//Instantiate<Bullet>(this);
 
 }
 
