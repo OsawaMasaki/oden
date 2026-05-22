@@ -1,13 +1,13 @@
 #pragma once
 #include "Engine\\GameObject.h"
 
-class Player :
-    public GameObject
+class Enemy :
+	public GameObject
 {
 public:
 	//コンストラクタ
 //引数：parent  親オブジェクト（SceneManager）
-	Player(GameObject* parent);
+	Enemy(GameObject* parent);
 
 	//初期化
 	void Initialize() override;
@@ -20,6 +20,7 @@ public:
 
 	//開放
 	void Release() override;
+	void OnCollision(GameObject* pTarget);
 private:
 	int hModel_;         //モデルのハンドル
 };

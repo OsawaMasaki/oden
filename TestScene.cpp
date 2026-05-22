@@ -37,7 +37,7 @@ void TestScene::Draw()
 	//transform_.position_ 描画位置
 	//transform_.rotate_   描画向き
 	//transform_.scale_    描画サイズ
-	transform_.scale_ = { 2.0f,2.0f,2.0f };      //画像サイズを二倍に
+	//transform_.scale_ = { 2.0f,2.0f,2.0f };      //画像サイズを二倍に
 	Image::SetTransform(hTitlePic_, transform_); //画像の位置や向きなどを設定
 	Image::Draw(hTitlePic_); //画像を描画
 }

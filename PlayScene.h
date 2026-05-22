@@ -23,7 +23,7 @@ public:
 
 private:
 	int hModel_;                     //モデルのハンドル
-	Transform ot_;             //モデルの位置やむきなどを管理するオブジェクト(おでん用のトランスフォーム)
+	int time;
 
 };
 

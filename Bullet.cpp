@@ -4,41 +4,51 @@
 #include "Player.h"
 
 Bullet::Bullet(GameObject* parent)
-	:GameObject(parent, "Bullet"), hModel_(-1)
-
+	:GameObject(parent, "Bullet"), hModel_(-1),speed_(1.0)
 {
 }
 
 void Bullet::Initialize()
 {
-	hModel_ = Model::Load("missile.fbx");
+	//hModel_ = Model::Load("Enemy.fbx");
+	hModel_ = Model::Load("Bullet.fbx");
 	assert(hModel_ >= 0);
-	trB_.position_ = { 0.0f,-3.0f,0.0f };       //位置、ポジション
-	trB_.scale_ = { 0.1f,0.1f,0.6f };           //大きさ
-	trB_.rotate_ = { 0.0f,0.0f,0.0f };          //回転
+	
+	//  ↓いらない 書かなくてもPlayerの場所を探してくれる
+	//Player* player = (Player*)GetParent();            //Playerの情報を読み込む
+	//transform_.position_ = player->GetPosition();     //Playerの位置を探す
+
+	//transform_.position_ = { 0.0f,-3.0f,0.0f };            //位置、ポジション
+	transform_.scale_ = { 0.2f,0.2,0.4f };            //大きさ
+	transform_.rotate_ = { 0.0f,0.0f,0.0f };          //回転
+
+	SphereCollider* collider = new SphereCollider(XMFLOAT3(0.0f, 0.0f, 0.0f),0.5f);
+	AddCollider(collider);
+
 }
 
 void Bullet::Update()
 {
-	//プレイヤーの位置に合わせる
-	//trB_.position_.x =
-
 	//弾の移動速度
-	trB_.position_.z += 0.07;
+	transform_.position_.z += speed_;
 
 
 	//弾の回転
-	trB_.rotate_.z += 10;
+	transform_.rotate_.z -= 15;
+	if (transform_.rotate_.z <= 0)   //無限に数値が変わるのを防ぐ
+	{
+		transform_.rotate_.z = 360;
+	}
 
 	//自分を消す
-	if (trB_.position_.z > 40.0f) {
+	if (transform_.position_.z >= 100.0f) {
 		KillMe();
 	}
 }
 
 void Bullet::Draw()
 {
-	Model::SetTransform(hModel_, trB_);
+	Model::SetTransform(hModel_, transform_);
 	Model::Draw(hModel_);
 }
 

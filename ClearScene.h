@@ -1,13 +1,13 @@
 #pragma once
-#include "Engine\\GameObject.h"
+#include "Engine/GameObject.h"
 
-class Player :
+class ClearScene :
     public GameObject
 {
 public:
 	//コンストラクタ
-//引数：parent  親オブジェクト（SceneManager）
-	Player(GameObject* parent);
+	//引数：parent  親オブジェクト（SceneManager）
+	ClearScene(GameObject* parent);
 
 	//初期化
 	void Initialize() override;
@@ -20,7 +20,8 @@ public:
 
 	//開放
 	void Release() override;
+
 private:
-	int hModel_;         //モデルのハンドル
+	int hTitlePic_; //タイトル画像のハンドル
 };
 

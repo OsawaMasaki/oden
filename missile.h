@@ -1,13 +1,13 @@
 #pragma once
 #include "Engine\\GameObject.h"
 
-class Player :
-    public GameObject
+class missile :
+	public GameObject
 {
 public:
 	//コンストラクタ
 //引数：parent  親オブジェクト（SceneManager）
-	Player(GameObject* parent);
+	missile(GameObject* parent);
 
 	//初期化
 	void Initialize() override;
@@ -22,5 +22,6 @@ public:
 	void Release() override;
 private:
 	int hModel_;         //モデルのハンドル
+	float speed_;
 };
 
