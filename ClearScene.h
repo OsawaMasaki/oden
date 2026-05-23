@@ -23,5 +23,8 @@ public:
 
 private:
 	int hTitlePic_; //タイトル画像のハンドル
+	int hTextPic_; //文字画像のハンドル
+	int WIN_WIDTH = 1280;
+	int WIN_HEIGHT = 720;
 };
 
