@@ -13,8 +13,8 @@ void Player::Initialize()
 {
 	hModel_ = Model::Load("SpaceShip.fbx");
 	assert(hModel_ >= 0);
-	transform_.position_ = { transform_.position_.x,0.0f,0.0f };       //位置、ポジション
-	transform_.scale_ = { 0.5f,0.6f,0.5f };                      //大きさ
+	transform_.position_ = { transform_.position_.x,0.0f,0.0f };   //位置、ポジション
+	transform_.scale_ = { 0.5f,0.6f,0.5f };                        //大きさ
 }
 
 void Player::Update()
@@ -24,11 +24,20 @@ void Player::Update()
 	{
 		transform_.position_.x -= 0.2;
 	}
-
 	//右移動
 	if (Input::IsKey(DIK_RIGHT) || Input::IsKey(DIK_D))
 	{
 		transform_.position_.x += 0.2;
+	}
+	//上移動
+	if (Input::IsKey(DIK_UP) || Input::IsKey(DIK_W))
+	{
+		transform_.position_.y += 0.2;
+	}
+	//下移動
+	if (Input::IsKey(DIK_DOWN) || Input::IsKey(DIK_S))
+	{
+		transform_.position_.y -= 0.2;
 	}
 
 	//弾の発射
