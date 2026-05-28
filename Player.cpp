@@ -3,6 +3,7 @@
 #include "Engine/Input.h"
 #include "Bullet.h"
 #include "missile.h"
+#include "Line.h"
 
 Player::Player(GameObject* parent)
 	:GameObject(parent, "Player"), hModel_(-1)
@@ -15,10 +16,16 @@ void Player::Initialize()
 	assert(hModel_ >= 0);
 	transform_.position_ = { transform_.position_.x,0.0f,0.0f };       //位置、ポジション
 	transform_.scale_ = { 0.5f,0.6f,0.5f };                      //大きさ
+
+	
+
 }
 
 void Player::Update()
 {
+	Line* pLine = Instantiate<Line>(this->GetParent());
+	pLine->SetPosition(transform_.position_);
+
 	//左移動
 	if (Input::IsKey(DIK_LEFT) || Input::IsKey(DIK_A))
 	{

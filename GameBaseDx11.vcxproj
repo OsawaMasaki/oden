@@ -159,6 +159,7 @@
     <ClCompile Include="Engine\Text.cpp" />
     <ClCompile Include="Engine\Texture.cpp" />
     <ClCompile Include="Engine\Transform.cpp" />
+    <ClCompile Include="Line.cpp" />
     <ClCompile Include="missile.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="PlayScene.cpp" />
@@ -191,6 +192,7 @@
     <ClInclude Include="Engine\Text.h" />
     <ClInclude Include="Engine\Texture.h" />
     <ClInclude Include="Engine\Transform.h" />
+    <ClInclude Include="Line.h" />
     <ClInclude Include="missile.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="PlayScene.h" />
