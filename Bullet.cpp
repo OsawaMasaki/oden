@@ -22,7 +22,7 @@ void Bullet::Initialize()
 	transform_.scale_ = { 0.1f,0.1,0.3f };            //大きさ
 	transform_.rotate_ = { 0.0f,0.0f,0.0f };          //回転
 
-	SphereCollider* collider = new SphereCollider(XMFLOAT3(0.0f, 0.0f, 0.0f),0.2f);
+	SphereCollider* collider = new SphereCollider(XMFLOAT3(0.0f, 0.0f, 0.6f),0.1f);
 	AddCollider(collider);
 
 }

@@ -25,6 +25,8 @@ void PlayScene::Initialize()
 	Instantiate<Enemy>(this);
 	Instantiate<Enemy>(this);
 	Instantiate<Enemy>(this);
+	Instantiate<Enemy>(this);
+	Instantiate<Enemy>(this);
 
 	time = 0;
 
@@ -43,7 +45,7 @@ void PlayScene::Update()
 
 	}
 
-	if (time >= 150)
+	if (time >= 300)
 	{
 		Instantiate<Enemy>(this);
 		time = 0;

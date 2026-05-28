@@ -19,7 +19,7 @@ void ClearScene::Initialize()
 
 void ClearScene::Update()
 {
-	if (Input::IsKeyDown(DIK_SPACE))
+	if (Input::IsKeyDown(DIK_T))
 	{
 		//シーンマネージャーを探して、シーン切り替えの関数を呼ぶ
 		// 見つからない場合はnullptrが返るので、nullptrでないことを確認してから呼ぶ

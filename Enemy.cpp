@@ -40,6 +40,8 @@ void Enemy::Update()
 	float ampx = 6.0f;
 	timer += 0.02f; //移動する速さ
 
+	transform_.position_.x += cosf(timer) * ampx * 0.01f; //横の動き
+
 	// スケールと回転
 	transform_.scale_ = { 0.5f, 0.5f, 0.5f };
 	transform_.rotate_ = { 0.0f, 180.0f, 0.0f };
@@ -61,5 +63,10 @@ void Enemy::OnCollision(GameObject* pTarget)
 	{
 		pTarget->KillMe();  
 		KillMe();          
+	}
+	if (pTarget->GetObjectName() == "missile")
+	{
+		pTarget->KillMe();
+		KillMe();
 	}
 }

@@ -26,5 +26,7 @@ private:
 	float timer = 0.0f;
 	float randamx;
 	float randamy;
+	float posx;
+	float posy;
 };
 

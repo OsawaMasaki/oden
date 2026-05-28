@@ -14,8 +14,11 @@ void missile::Initialize()
 	assert(hModel_ >= 0);
 
 	//tr_.position_ = { 0.0f,-3.0f,0.0f };            //位置、ポジション
-	transform_.scale_ = { 0.3f,0.3,0.5f };           //大きさ
+	transform_.scale_ = { 0.3f,0.3f,0.5f };           //大きさ
 	transform_.rotate_ = { 0.0f,0.0f,0.0f };          //回転
+
+	SphereCollider* collider = new SphereCollider(XMFLOAT3(0.0f, 0.0f, 0.0f), 0.4f);
+	AddCollider(collider);
 }
 
 void missile::Update()
@@ -25,7 +28,7 @@ void missile::Update()
 
 
 	//弾の回転
-	transform_.rotate_.z -= 15;
+	transform_.rotate_.z -= 10;
 	if (transform_.rotate_.z <= 0)   //無限に数値が変わるのを防ぐ
 	{
 		transform_.rotate_.z = 360;
