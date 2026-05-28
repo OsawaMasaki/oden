@@ -23,5 +23,8 @@ public:
 	void OnCollision(GameObject* pTarget);
 private:
 	int hModel_;         //モデルのハンドル
+	float timer = 0.0f;
+	float randamx;
+	float randamy;
 };
 

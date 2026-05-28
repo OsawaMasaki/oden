@@ -4,7 +4,7 @@
 #include "Player.h"
 
 Bullet::Bullet(GameObject* parent)
-	:GameObject(parent, "Bullet"), hModel_(-1),speed_(1.0)
+	:GameObject(parent, "Bullet"), hModel_(-1),speed_(0.5)
 {
 }
 
@@ -19,10 +19,10 @@ void Bullet::Initialize()
 	//transform_.position_ = player->GetPosition();     //Playerの位置を探す
 
 	//transform_.position_ = { 0.0f,-3.0f,0.0f };            //位置、ポジション
-	transform_.scale_ = { 0.2f,0.2,0.4f };            //大きさ
+	transform_.scale_ = { 0.1f,0.1,0.3f };            //大きさ
 	transform_.rotate_ = { 0.0f,0.0f,0.0f };          //回転
 
-	SphereCollider* collider = new SphereCollider(XMFLOAT3(0.0f, 0.0f, 0.0f),0.5f);
+	SphereCollider* collider = new SphereCollider(XMFLOAT3(0.0f, 0.0f, 0.0f),0.2f);
 	AddCollider(collider);
 
 }

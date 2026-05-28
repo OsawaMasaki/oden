@@ -15,31 +15,34 @@ void Enemy::Initialize()
 	transform_.scale_ = { 0.5f,0.5f,0.5f };                      //大きさ
 	SphereCollider* collider = new SphereCollider(XMFLOAT3(0.0f, 0.0f, 0.0f), 0.5f);
 	AddCollider(collider);
-}
 
-void Enemy::Update()
-{
 	// 動きの速さを調節するためのタイマー
-	static float timer = 0.0f;
 	static float rot = 0.0f;
-	timer += 0.03f; //移動する速さ
-	rot += 0.3f;  //回る速さ
 
-	// 振幅 amplitude
-	float ampx = 6.0f;
-	float ampy = 1.5f;
+	rot += 0.0f;    //回る速さ
+
 
 	// 座標の設定
 	// sin関数は -1.0 〜 1.0 の間で変化
 	float posx;
 	float posy;
-	posx = sin(timer) * ampx;
-	posy = cos(timer) * ampy;
-	transform_.position_ = { posx,posy,10.0f };
+	randamx = rand() % 10;
+	randamy = rand() % 5;
+	posx = randamx;
+	posy = randamy;
+	transform_.position_ = { posx - 5,posy, 30.0f};
+}
+
+void Enemy::Update()
+{
+	// 振幅 amplitude
+	float ampy = 1.5f;
+	float ampx = 6.0f;
+	timer += 0.02f; //移動する速さ
 
 	// スケールと回転
 	transform_.scale_ = { 0.5f, 0.5f, 0.5f };
-	transform_.rotate_ = { 0.0f, rot, 0.0f };
+	transform_.rotate_ = { 0.0f, 180.0f, 0.0f };
 }
 
 void Enemy::Draw()
