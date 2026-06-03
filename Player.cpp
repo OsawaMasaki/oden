@@ -15,7 +15,7 @@ void Player::Initialize()
 	assert(hModel_ >= 0);
 	transform_.position_ = { transform_.position_.x,0.0f,0.0f };       //位置、ポジション
 	transform_.scale_ = { 0.5f,0.6f,0.5f };                      //大きさ
-
+	transform_.rotate_ = { 0.0f,0.0f,0.0f };
 
 }
 
