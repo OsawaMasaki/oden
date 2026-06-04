@@ -1,7 +1,6 @@
 #include "missile.h"
 #include "Engine/Model.h"
 #include "Engine/Input.h"
-#include "Player.h"
 
 missile::missile(GameObject* parent)
 	:GameObject(parent, "missile"), hModel_(-1), speed_(0.3)

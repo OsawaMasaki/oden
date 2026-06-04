@@ -1,7 +1,6 @@
 #include "Bullet.h"
 #include "Engine/Model.h"
 #include "Engine/Input.h"
-#include "Player.h"
 
 Bullet::Bullet(GameObject* parent)
 	:GameObject(parent, "Bullet"), hModel_(-1),speed_(0.5)

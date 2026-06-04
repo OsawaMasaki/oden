@@ -3,6 +3,7 @@
 #include "Engine/Input.h"
 #include "Bullet.h"
 #include "missile.h"
+#include "Aim.h"
 
 Player::Player(GameObject* parent)
 	:GameObject(parent, "Player"), hModel_(-1)
@@ -17,6 +18,7 @@ void Player::Initialize()
 	transform_.scale_ = { 0.5f,0.6f,0.5f };                      //大きさ
 	transform_.rotate_ = { 0.0f,0.0f,0.0f };
 
+	
 }
 
 void Player::Update()
@@ -67,6 +69,11 @@ void Player::Update()
 	{
 		missile* pBullet = Instantiate<missile>(this->GetParent());
 		pBullet->SetPosition(transform_.position_);
+	}
+	if (Input::IsKeyUp(DIK_F))
+	{
+		Aim* pAim = Instantiate<Aim>(this->GetParent());
+		pAim->SetPosition(transform_.position_);
 	}
 }
 

@@ -22,8 +22,5 @@ public:
 	void Release() override;
 private:
 	int hModel_;         //モデルのハンドル
-	float timer = 0.0f;
-	float posx;
-	float posy;
 };
 
