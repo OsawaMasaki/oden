@@ -57,8 +57,6 @@ void Player::Update()
 		}
 	}
 	
-
-
 	//弾の発射
 	if (Input::IsKeyUp(DIK_SPACE))
 	{
@@ -70,11 +68,11 @@ void Player::Update()
 		missile* pBullet = Instantiate<missile>(this->GetParent());
 		pBullet->SetPosition(transform_.position_);
 	}
-	if (Input::IsKeyUp(DIK_F))
-	{
-		Aim* pAim = Instantiate<Aim>(this->GetParent());
-		pAim->SetPosition(transform_.position_);
-	}
+	//if (Input::IsKeyUp(DIK_F))
+	//{
+	//	Aim* pAim = Instantiate<Aim>(this->GetParent());
+	//	pAim->SetPosition(transform_.position_);
+	//}
 }
 
 void Player::Draw()
