@@ -16,7 +16,7 @@ void missile::Initialize()
 	transform_.scale_ = { 0.3f,0.3f,0.5f };           //大きさ
 	transform_.rotate_ = { 0.0f,0.0f,0.0f };          //回転
 
-	SphereCollider* collider = new SphereCollider(XMFLOAT3(0.0f, 0.0f, 0.0f), 10.4f);
+	SphereCollider* collider = new SphereCollider(XMFLOAT3(0.0f, 0.0f, 0.0f), 0.4f);
 	AddCollider(collider);
 }
 
